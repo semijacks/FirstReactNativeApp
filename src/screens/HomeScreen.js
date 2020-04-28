@@ -1,27 +1,29 @@
 import React from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native";
 
-const HomeScreen = () => {
-  const name = "Semijacks";
-
+const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.view}>
       <Text style={styles.headerTextStyle}>This is my first native App!</Text>
-      <Text style={styles.subheaderTextStyle}>My name is {name}</Text>
+      <Button
+        onPress={() => navigation.navigate("Components")}
+        title="Go to Components Demo"
+      />
+      <Button
+        onPress={() => navigation.navigate("List")}
+        title="Go to List Demo"
+      />
+      <Button
+        onPress={() => navigation.navigate("Image")}
+        title="Go to ImageScreen"
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  view: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
   headerTextStyle: {
-    fontSize: 25,
-    fontWeight: "bold",
+    fontSize: 30,
   },
 
   subheaderTextStyle: {
