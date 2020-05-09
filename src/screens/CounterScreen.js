@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
+import { set } from "react-native-reanimated";
 
 const CounterScreen = () => {
   const [counter, setCounter] = useState(0);
@@ -9,15 +10,13 @@ const CounterScreen = () => {
       <Button
         title="Increase"
         onPress={() => {
-          counter++;
-          console.log(counter);
+          setCounter(counter + 1);
         }}
       />
       <Button
         title="Decrease"
         onPress={() => {
-          counter--;
-          console.log(counter);
+          setCounter(counter - 1);
         }}
       />
       <Text>Current Count: {counter}</Text>
